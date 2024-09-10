@@ -1,0 +1,120 @@
+/* General styling for the section */
+.neurodiverse-section {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color:#4444f3; /* Blue background */
+  }
+  
+  /* Top section with VR image */
+  .top-section {
+    position: relative;
+    height: 400px;
+    background-color: #4444f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vr-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Bottom section with the card */
+  .bottom-section {
+    background-color: #4444f3;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Card's left side */
+  .card-left {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+  }
+  
+  .card-image-container {
+    position: relative;
+  
+    
+  }
+  
+  .featured-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: orange;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .card-image {
+    width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  }
+  
+  .card-left h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+    color: #343a40;
+  }
+  
+  .card-left p {
+    font-size: 16px;
+    color: #6c757d;
+    padding-left: 60px;
+    text-align: center;
+  }
+
+  
+  
+  /* Card's right side */
+  .card-right {
+    width: 45%;
+    color: white;
+  }
+  
+  .card-right h2 {
+    font-size: 2rem;
+  margin-bottom: 20px;
+  }
+  
+  .card-right p {
+    font-size: 1.1rem;
+  margin-bottom: 20px;
+  }
+  
+  .explore-button {
+    background-color: orange;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  }
+  
+  .explore-button:hover {
+    background-color: #e0a800;
+  }
+  

@@ -1,0 +1,227 @@
+/* Container for the Middle section */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 50px 150px 50px;
+    background-color: #16164d; /* dark blue background */
+    color: white;
+    border-bottom-left-radius: 80px;  /* Circular curve at the bottom */
+    border-bottom-right-radius: 80px; /* Circular curve at the bottom */
+    overflow: visible; /* Allow overflow for the image */
+    height: 700px; /* Increased height of the blue section */
+    position: relative;
+    
+  }
+  
+  /* Left section styling */
+  .left-section {
+    flex: 1;
+    padding-right: 20px;
+    z-index: 1; /* Make sure text stays on top */
+    position: relative;
+  }
+  
+  .heading {
+    font-size: 48px; /* Increased size */
+    margin-bottom: 20px;
+  }
+
+  .left-section {
+    padding-top:100px;
+    padding-left: 200px;
+  }
+
+  
+  
+  .subheading {
+    font-size: 24px; /* Increased size */
+    margin-bottom: 40px;
+  }
+  
+  .button {
+    background-color: #ffc107; /* yellow background */
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 18px; /* Increased size */
+    color: #1a237e; /* dark blue text */
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Right section styling */
+  .right-section {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    z-index: 0; /* Ensure the image stays below the text */
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .left-section h1,p,button{
+    padding-right: 100px;
+  }
+  
+  .image {
+    width: 100%; /* Cover the full width of the container */
+    border-radius: 20px;
+    position: absolute;
+    bottom: -250px; /* Shift image further down to overlap the bottom section */
+    right: -50px; /* Slight overlap on the right side */
+    z-index: -1; /* Ensure the image stays below the text */
+  }
+  
+  /* Next Section Styling */
+  .next-section {
+    top:100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: white;
+    color: #16164d;
+    position: relative;
+    height: 1000px;
+    padding-left: 200px;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .next-heading {
+    font-size: 36px;
+    color: #1a237e;
+    
+  }
+  
+  .next-big-heading {
+    font-size: 72px;
+    font-weight: bold;
+    color: #16164d;
+    
+  }
+  
+  .next-subheading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1a237e;
+  }
+  
+  .next-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .next-button {
+    background-color: #ffc107; /* yellow background */
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 18px; /* Increased size */
+    color: #1a237e; /* dark blue text */
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .next-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Background image styling */
+  .background-image {
+    position: absolute;
+    z-index: 2; /* Lower z-index to place it behind */
+    width: 100%;
+    border-radius: 20px;
+    height: 600px;
+    padding-right: 100px;
+    bottom: 300px;
+  }
+  
+  /* Foreground image styling */
+  .foreground-image {
+    position: relative;
+    z-index: 0; /* Higher z-index to place it in front */
+    width: 80%; /* Adjust width as needed */
+    border-radius: 20px;
+    padding-right: 100px;
+    bottom: 100px;
+  }
+
+  .approachable-learning-container {
+    background: linear-gradient(to bottom, #3B3B98, #000428);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-radius: 120px 120px 0 0;
+    margin-top: 80px;
+    
+  }
+  
+  .approachable-learning-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+   
+  }
+
+  .approachable-learning-container h1 {
+    padding-bottom: 80px;
+    font-size: 48px;
+    
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+  
+  .feature-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .feature-item span {
+    font-size: 30px;
+    margin-right: 15px;
+  }
+  
+  .feature-item p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .research-button {
+    background-color: white;
+    color: #3B3B98;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .research-button:hover {
+    background-color: #E8E8E8;
+  }
+  
+  

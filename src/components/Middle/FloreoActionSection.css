@@ -1,0 +1,60 @@
+.floreo-section {
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: #3a3bf7; /* Matches the blue background in the image */
+    padding: 60px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    
+  }
+  
+  .floreo-text {
+    max-width: 40%;
+    position: relative;
+    left: 130px;
+  }
+  
+  .floreo-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+    
+  }
+  
+  .floreo-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .request-demo-btn {
+    background-color: #fba927; /* Matches the orange button */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .request-demo-btn:hover {
+    background-color: #d8901e;
+  }
+  
+  .floreo-image {
+    max-width: 50%;
+    position: relative;
+    left: 400px;
+    
+  }
+  
+  .demo-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 300px;
+  }
+  
