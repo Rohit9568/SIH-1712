@@ -1,7 +1,25 @@
 import Navbar from '../components/Navbar/Navbar';
 import './LessonLibrary.css'; // Add this to handle the styling
+import   { useState } from 'react'
+import birds from '../assets/birds.jpeg';  // Go up one level from routes, then into assets
+import girlsit from '../assets/girlsit.jpeg';
+import pool from '../assets/pool.png';
+import roads from '../assets/roads.jpeg';
+import myra from '../assets/myra.jpeg';
+import tree from '../assets/tree.jpeg';
 
 const LessonLibrary = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  
+  // Function to handle modal open
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  // Function to handle modal close
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <div className="lesson-library">
       <Navbar />
@@ -11,11 +29,71 @@ const LessonLibrary = () => {
 
         <div className="image-section">
           <img
-            src="https://photos.floreotech.com/sha224-i-7040ea5d7ea0aeb8ac0fa7c39fb6118d3ed54c8ff19498729fd10a1d"
+            src={girlsit}
             alt="Person using VR"
             className="lesson-image"
+            onClick={openModal} // Open modal on image click
           />
         </div>
+
+        {isModalOpen && (
+  <div className="modal-overlay">
+    <div className="modal-content">
+      <span className="close-button" onClick={closeModal}>×</span>
+      
+      {/* Modal Header */}
+      <div className="modal-header">
+        <h1>Neighborhood Crosswalk</h1>
+      </div>
+      
+      {/* Modal Media Section (Image for now, video can be added later) */}
+      <div className="modal-video-section">
+        <img src={girlsit} alt="Lesson Image" className="lesson-video-placeholder" />
+      </div>
+
+      {/* Lesson Information */}
+      <div className="lesson-info">
+        <div className="lesson-details">
+          <div className="badge">All Ages</div>
+          <div className='language'>All Language Levels</div>
+          <div className="tags">tags: neighborhood, crosswalk, safety, street, crossing</div>
+        </div>
+
+        <div className="lesson-description">
+          <p>
+            The Learner will be able to accurately identify a safe moment to cross the street by locating crosswalks and monitoring vehicle movements.
+          </p>
+          <p>
+            <strong>Summary:</strong> Navigate a virtual neighborhood to learn and practice safe street-crossing techniques. This lesson promotes independence and builds confidence in navigating neighborhood street crossings safely. Skills addressed in this lesson include safety awareness, decision making, visual processing, and auditory processing.
+          </p>
+        </div>
+      </div>
+
+      {/* Related Lessons Section */}
+      <div className="related-lessons-section">
+        <h2>Related Lessons</h2>
+        <div className="related-lessons-container">
+          <div className="related-lesson">
+            <img src={roads} alt="Related Lesson 1" />
+            <p>Don't Follow the Jaywalker!</p>
+            <button>View Lesson</button>
+          </div>
+          <div className="related-lesson">
+            <img src={roads} alt="Related Lesson 2" />
+            <p>Check For Risky Cars!</p>
+            <button>View Lesson</button>
+          </div>
+          <div className="related-lesson">
+            <img src={roads} alt="Related Lesson 3" />
+            <p>Lucky Corner, Driver Wave</p>
+            <button>View Lesson</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
         
       
           {/* New Section */}
@@ -24,37 +102,39 @@ const LessonLibrary = () => {
           <div className="new-lessons-container">
             <div className="lesson-card">
               <div className="coming-soon-overlay">COMING SOON</div>
-              <img src="https://photos.floreotech.com/sha224-i-064fbac3ef63dd037369d32be897bc74c8b35bca2f94a108011060f0?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 1" className="lesson-card-image" />
+              <img src= {roads}    onClick={openModal} alt="Lesson 1" className="lesson-card-image" />
               <h4>Neighborhood Crosswalk</h4>
               <p>All Language Levels</p>
+           
             </div>
             <div className="lesson-card">
               <div className="coming-soon-overlay">COMING SOON</div>
-              <img src="https://photos.floreotech.com/sha224-i-7d2018fdabad419c01dba54dfaaf84bbd94ed1442a65f4f4a3b1c3ad?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 2" className="lesson-card-image" />
+              <img src= {pool} alt="Lesson 2" onClick={openModal}  className="lesson-card-image" />
               <h4>Pool Party Safety: The Basics</h4>
               <p>All Language Levels</p>
+             
             </div>
 
             <div className="lesson-card">
-              <img src="https://photos.floreotech.com/sha224-i-962d137cc551772b53289a4c9b0bebfd3f365232a5de8ce4181db939?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 3" className="lesson-card-image" />
+              <img src={tree} alt="Lesson 3" className="lesson-card-image" />
               <h4>Lush Forests</h4>
               <p>All Language Levels</p>
             </div>
 
             <div className="lesson-card">
-              <img src="https://photos.floreotech.com/sha224-i-7f285282209f4fd2fd33d5e9981f26b7a5f35bf6c77193a0bdfbd43c?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 4" className="lesson-card-image" />
+              <img src={myra} alt="Lesson 4" className="lesson-card-image" />
               <h4>Chit-Chat with Myra</h4>
               <p>Verbal, Highly Verbal</p>
             </div>
 
             <div className="lesson-card">
-              <img src="https://photos.floreotech.com/sha224-i-c1de8a28400984ce2f6cc919a5e1f3475666e640c9bfb09a7d180b18?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 5" className="lesson-card-image" />
+              <img src= {birds} alt="Lesson 5" className="lesson-card-image" />
               <h4>Flight with Animals</h4>
               <p>All Language Levels</p>
             </div>
 
             <div className="lesson-card">
-              <img src="https://photos.floreotech.com/sha224-i-7040ea5d7ea0aeb8ac0fa7c39fb6118d3ed54c8ff19498729fd10a1d?w=248&fit=crop&auto=format&dpr=2%202x" alt="Lesson 6" className="lesson-card-image" />
+              <img src={girlsit} alt="Lesson 6" className="lesson-card-image" />
               <h4>Chit-Chat with Ayanna</h4>
               <p>Verbal, Highly Verbal</p>
             </div>

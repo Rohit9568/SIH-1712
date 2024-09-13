@@ -53,7 +53,7 @@
 
 .lesson-image {
     width: 100%;
-    height: auto;
+    height: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -234,10 +234,165 @@
         grid-template-columns: 1fr;
     }
 }
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto; /* Allows scrolling when modal content overflows */
+    padding: 20px; /* Added padding to ensure modal content isn't flush with the edges */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #16164d;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 1000px;
+    position: relative;
+    color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-height: 90vh; /* Ensures the modal content never exceeds 90% of the viewport height */
+    overflow-y: auto; /* Allows scrolling inside the modal when content is too tall */
+  }
+  
+  /* Close Button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 10000; /* Ensures the close button appears above all content */
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-header h1 {
+    font-size: 30px;
+    color: #f5f5f5;
+  }
+  
+  /* Video/Image Section */
+  .modal-video-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .lesson-video-placeholder {
+    width: 100%;
+    height: auto; /* Make height auto to maintain aspect ratio */
+    max-height: 500px; /* Ensure the image doesn't grow too large */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures image fits nicely */
+    background-color: #333; /* Placeholder color */
+  }
+  
+  /* Lesson Information */
+  .lesson-info {
+    margin-bottom: 20px;
+    
+  }
+  
+  .lesson-details {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  
+  .badge {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 10px;
+    width: 100px;
+  }
 
-
-
-
-
-
+  .language{
+    margin-right: 790px;
+    padding-bottom: 10px;
+  }
+  
+  .tags {
+    font-size: 14px;
+    color: #ddd;
+    margin-right: 600px;
+  }
+  
+  .lesson-description p {
+    margin-bottom: 10px;
+    color: #ddd;
+    text-align: left;
+  }
+  
+  /* Related Lessons Section */
+  .related-lessons-section {
+    margin-top: 40px;
+  }
+  
+  .related-lessons-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+  }
+  
+  .related-lessons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping if the lessons are too wide for smaller screens */
+  }
+  
+  .related-lesson {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 220px; /* Ensures the lessons don’t shrink too much on smaller screens */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Spacing between lessons */
+  }
+  
+  .related-lesson img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .related-lesson p {
+    margin-top: 10px;
+    color: #f5f5f5;
+  }
+  
+  .related-lesson button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .related-lesson button:hover {
+    background-color: #2980b9;
+  }
   
