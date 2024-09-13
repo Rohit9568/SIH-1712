@@ -1,0 +1,277 @@
+/* Dashboard.css */
+
+.d-container {
+    display: flex;
+    height: 150vh;
+    background-color: #1a202c; 
+  }
+  
+  .d-left-side {
+    width: 25%;
+    background-color: #2d3748; 
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .profile-picture {
+    width: 8rem; 
+    height: 8rem;
+    border-radius: 50%; 
+    margin-bottom: 2rem; 
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-info {
+    text-align: center;
+    color: #edf2f7; 
+  }
+  
+  .profile-name {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-bottom: 0.5rem; 
+  }
+  
+  .college-name {
+    color: #e2e8f0;
+    margin-bottom: 1.5rem; 
+  }
+  
+  .achievements-heading {
+    font-size: 1.125rem; 
+    font-weight: 600; 
+    color: #edf2f7; 
+    margin-bottom: 1rem; 
+  }
+  
+  .d-badge {
+    width: 5rem; 
+    height: 5rem;
+    margin-bottom: 0.5rem; 
+    border-radius: 50%;
+  }
+  
+  .d-sidebar {
+    margin-top: 1.5rem; 
+  }
+  
+  .d-sidebar-link {
+    font-size: 1.125rem; 
+    font-weight: 600; 
+    color: #edf2f7;
+    cursor: pointer;
+    margin-bottom: 1rem; 
+    text-decoration: none;
+  }
+  
+  .d-sidebar-link:hover {
+    text-decoration: underline;
+  }
+  
+  .d-sidebar-description {
+    color: #e2e8f0; 
+    margin-top: 0.5rem;
+  }
+  
+  .d-right-side {
+    width: 75%;
+    background-color: #1a202c; 
+    padding: 1.5rem; 
+  }
+  
+  .d-hours-active {
+    background-color: #2d3748; 
+    padding: 1.5rem; 
+    border-radius: 0.5rem;
+    color: #edf2f7; 
+  }
+  
+  .d-hours-heading {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .d-hours-detail {
+    font-size: 1.125rem; 
+    margin-bottom: 0.5rem; 
+  }
+  
+  .d-hours-value {
+    font-weight: bold;
+    font-size: 1.25rem; 
+  }
+  
+  /* Dashboard.css */
+
+/* Container for the right side */
+.d-right-side {
+    width: 75%;
+    background-color: #1a202c; /* Gray-900 */
+    padding: 1.5rem; /* p-6 */
+  }
+  
+  /* Hours Active Section */
+  .d-hours-active {
+    background-color: #2d3748; /* Gray-800 */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    color: #edf2f7; /* White */
+  }
+  
+  /* Grid container for two boxes */
+  .d-grid-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; /* mb-4 */
+  }
+  
+  /* Progress Circle Box */
+  .d-progress-box {
+    width: 48%;
+  }
+  
+  /* Heat Map Box */
+  .d-heatmap-box {
+    width: 48%;
+  }
+  
+  /* Circular progress indicator */
+  .d-progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .d-progress-circle::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: white;
+    animation: spin 2s linear infinite;
+  }
+  
+  .d-progress-text {
+    position: relative;
+    color: white;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+  }
+  
+  /* Heatmap placeholder (replace with actual implementation) */
+  .d-heatmap-placeholder {
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: #2d3748; /* Gray-800 */
+    border-radius: 0.5rem; /* rounded-lg */
+  }
+  
+  /* Hours detail */
+  .d-hours-detail {
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }
+  
+  .hours-value {
+    font-weight: bold;
+    font-size: 1.25rem; /* text-xl */
+  }
+  
+  /* Animation for progress circle */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Dashboard.css */
+
+/* Container for the right side */
+.d-right-side {
+    width: 75%;
+    background-color: #1a202c; /* Gray-900 */
+    padding: 1.5rem; /* p-6 */
+  }
+  
+  /* Hours Active Section */
+  .d-hours-active {
+    background-color: #2d3748; /* Gray-800 */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    color: #edf2f7; /* White */
+  }
+  
+  /* Grid container for two boxes */
+  .d-grid-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem; /* mb-4 */
+  }
+  
+  /* Progress Circle Box */
+  .d-progress-box {
+    width: 48%;
+  }
+  
+  /* Heat Map Box */
+  .d-heatmap-box {
+    width: 48%;
+    height: 100px; /* Adjust height as needed */
+  }
+  
+  /* Circular progress indicator */
+  .d-progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .d-progress-circle::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: white;
+    animation: spin 2s linear infinite;
+  }
+  
+  .d-progress-text {
+    position: relative;
+    color: white;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+  }
+  
+  /* Hours detail */
+  .d-hours-detail {
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }
+  
+  .hours-value {
+    font-weight: bold;
+    font-size: 1.25rem; /* text-xl */
+  }
+  
+  /* Animation for progress circle */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

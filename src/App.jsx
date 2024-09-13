@@ -8,7 +8,7 @@ import Uses from "./routes/Uses";
 import Research  from "./routes/Research";
 import Home from "./routes/Home";
 import LessonLibrary from "./routes/LessonLibrary";
-
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
       <Route path="/Research" element={<Research/>}  />
       <Route path="/Uses" element={<Uses/>}  />
       <Route path="/lesson-library" element={<LessonLibrary/>} />
+      <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
 
     
