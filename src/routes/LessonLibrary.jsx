@@ -78,7 +78,7 @@ const LessonLibrary = () => {
 
               {/* Modal Header */}
               <div className="modal-header">
-                <h1 className="text-3xl font-semibold mb-4">Neighborhood Crosswalk</h1>
+                <h1 className="text-3xl font-semibold mb-4">Meet the Animals</h1>
               </div>
  {/* Modal Media Section */}
  <div className="modal-video-section mb-4">
@@ -125,18 +125,18 @@ const LessonLibrary = () => {
                 <h2 className="text-2xl font-semibold">Related Lessons</h2>
                 <div className="related-lessons-container flex space-x-4">
                   <div className="related-lesson">
-                    <img src={roads} alt="Related Lesson 1" />
-                    <p>Don't Follow the Jaywalker!</p>
+                    <img src={car} alt="Related Lesson 1" />
+                    <p>Explore Jungle</p>
                     <button className="text-blue-500">View Lesson</button>
                   </div>
                   <div className="related-lesson">
-                    <img src={roads} alt="Related Lesson 2" />
-                    <p>Check For Risky Cars!</p>
+                    <img src={elephant} alt="Related Lesson 2" />
+                    <p>Watch Animals</p>
                     <button className="text-blue-500">View Lesson</button>
                   </div>
                   <div className="related-lesson">
-                    <img src={roads} alt="Related Lesson 3" />
-                    <p>Lucky Corner, Driver Wave</p>
+                    <img src={lion} alt="Related Lesson 3" />
+                    <p>Watch king of Jungle</p>
                     <button className="text-blue-500">View Lesson</button>
                   </div>
                 </div>

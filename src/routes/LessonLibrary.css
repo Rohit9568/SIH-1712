@@ -325,14 +325,15 @@
   }
 
   .language{
-    margin-right: 790px;
+    margin-right: 360px;
     padding-bottom: 10px;
   }
   
   .tags {
     font-size: 14px;
     color: #ddd;
-    margin-right: 600px;
+    margin-right: 30px;
+    text-align: start;
   }
   
   .lesson-description p {
@@ -355,18 +356,20 @@
   .related-lessons-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows wrapping if the lessons are too wide for smaller screens */
+    flex-wrap: nowrap; /* Allows wrapping if the lessons are too wide for smaller screens */
+
   }
   
   .related-lesson {
     background-color: #333;
-    padding: 10px;
+    padding: 7px;
     border-radius: 8px;
-    width: 30%;
+    width: 0%;
     min-width: 220px; /* Ensures the lessons don’t shrink too much on smaller screens */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px; /* Spacing between lessons */
+   
   }
   
   .related-lesson img {
@@ -379,6 +382,9 @@
   .related-lesson p {
     margin-top: 10px;
     color: #f5f5f5;
+    text-align: start;
+    
+
   }
   
   .related-lesson button {
