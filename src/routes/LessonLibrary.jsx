@@ -1,27 +1,57 @@
 import Navbar from '../components/Navbar/Navbar';
 import './LessonLibrary.css'; // Add this to handle the styling
-import   { useState } from 'react'
+import   { useState,useRef } from 'react'
 import birds from '../assets/birds.jpeg';  // Go up one level from routes, then into assets
 import girlsit from '../assets/girlsit.jpeg';
 import pool from '../assets/pool.png';
 import roads from '../assets/roads.jpeg';
 import myra from '../assets/myra.jpeg';
 import tree from '../assets/tree.jpeg';
+import jungle from '../assets/jungle.jpeg';
+import car from '../assets/car.png';
+import elephant from '../assets/elephant.png';
+import First from '../assets/First.png';
+import lion from '../assets/lion.png';
+import VrPopup from './VrPopup'; // Import the connection popup component
+import Jungle from '../assets/Jungle.mp4';
+
 
 const LessonLibrary = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  
-  // Function to handle modal open
+  const [isVrPopupOpen, setIsVrPopupOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null); // Create a reference for the video
+
   const openModal = () => {
     setModalOpen(true);
   };
 
-  // Function to handle modal close
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  const handleThumbnailClick = () => {
+    setIsVrPopupOpen(true); // Open the popup when the thumbnail is clicked
+  };
+
+  const handlePopupClose = () => {
+    setIsVrPopupOpen(false); // Close popup on button click
+  };
+
+  const handleShowVideo = () => {
+    setShowVideo(true);
+    setIsVrPopupOpen(false);
+
+    // Play video in fullscreen
+    if (videoRef.current) {
+      videoRef.current.requestFullscreen().then(() => {
+        videoRef.current.play();
+      });
+    }
+  };
+
   return (
-    <div className="lesson-library">
+ <div className="lesson-library">
       <Navbar />
       <div className="lesson-container">
         <h1 className="main-heading">Sahayak</h1>
@@ -29,7 +59,7 @@ const LessonLibrary = () => {
 
         <div className="image-section">
           <img
-            src={girlsit}
+            src={jungle}
             alt="Person using VR"
             className="lesson-image"
             onClick={openModal} // Open modal on image click
@@ -37,63 +67,88 @@ const LessonLibrary = () => {
         </div>
 
         {isModalOpen && (
-  <div className="modal-overlay">
-    <div className="modal-content">
-      <span className="close-button" onClick={closeModal}>×</span>
-      
-      {/* Modal Header */}
-      <div className="modal-header">
-        <h1>Neighborhood Crosswalk</h1>
-      </div>
-      
-      {/* Modal Media Section (Image for now, video can be added later) */}
-      <div className="modal-video-section">
-        <img src={girlsit} alt="Lesson Image" className="lesson-video-placeholder" />
-      </div>
+          <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+            <div className="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-4/5 max-w-xl relative">
+              <button
+                className="absolute top-2 right-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 text-2xl"
+                onClick={closeModal}
+              >
+                &times;
+              </button>
 
-      {/* Lesson Information */}
-      <div className="lesson-info">
-        <div className="lesson-details">
-          <div className="badge">All Ages</div>
-          <div className='language'>All Language Levels</div>
-          <div className="tags">tags: neighborhood, crosswalk, safety, street, crossing</div>
-        </div>
+              {/* Modal Header */}
+              <div className="modal-header">
+                <h1 className="text-3xl font-semibold mb-4">Neighborhood Crosswalk</h1>
+              </div>
+ {/* Modal Media Section */}
+ <div className="modal-video-section mb-4">
+                {!showVideo ? (
+                  <div className="video-thumbnail">
+                    <img
+                      src={First}
+                      alt="Lesson Thumbnail"
+                      className="lesson-video-placeholder cursor-pointer w-full"
+                      onClick={handleThumbnailClick}
+                    />
+                    <div className="play-button-overlay">▶</div> {/* Play button overlay */}
+                  </div>
+                ) : (
+                  <video
+                    ref={videoRef} // Reference to the video
+                    src={Jungle}
+                    controls
+                    autoPlay
+                    className="w-full h-auto"
+                  />
+                )}
+              </div>
 
-        <div className="lesson-description">
-          <p>
-            The Learner will be able to accurately identify a safe moment to cross the street by locating crosswalks and monitoring vehicle movements.
-          </p>
-          <p>
-            <strong>Summary:</strong> Navigate a virtual neighborhood to learn and practice safe street-crossing techniques. This lesson promotes independence and builds confidence in navigating neighborhood street crossings safely. Skills addressed in this lesson include safety awareness, decision making, visual processing, and auditory processing.
-          </p>
-        </div>
-      </div>
+              {/* Lesson Information */}
+              <div className="lesson-info">
+                <div className="lesson-details">
+                  <div className="badge">All Ages</div>
+                  <div className="language">All Language Levels</div>
+                  <div className="tags">tags: neighborhood, crosswalk, safety, street, crossing</div>
+                </div>
+                <div className="lesson-description">
+                  <p>
+                    The Learner will be able to accurately identify a safe moment to cross the street by locating crosswalks and monitoring vehicle movements.
+                  </p>
+                  <p>
+                    <strong>Summary:</strong> Navigate a virtual neighborhood to learn and practice safe street-crossing techniques.
+                  </p>
+                </div>
+              </div>
 
-      {/* Related Lessons Section */}
-      <div className="related-lessons-section">
-        <h2>Related Lessons</h2>
-        <div className="related-lessons-container">
-          <div className="related-lesson">
-            <img src={roads} alt="Related Lesson 1" />
-            <p>Don't Follow the Jaywalker!</p>
-            <button>View Lesson</button>
+              {/* Related Lessons Section */}
+              <div className="related-lessons-section">
+                <h2 className="text-2xl font-semibold">Related Lessons</h2>
+                <div className="related-lessons-container flex space-x-4">
+                  <div className="related-lesson">
+                    <img src={roads} alt="Related Lesson 1" />
+                    <p>Don't Follow the Jaywalker!</p>
+                    <button className="text-blue-500">View Lesson</button>
+                  </div>
+                  <div className="related-lesson">
+                    <img src={roads} alt="Related Lesson 2" />
+                    <p>Check For Risky Cars!</p>
+                    <button className="text-blue-500">View Lesson</button>
+                  </div>
+                  <div className="related-lesson">
+                    <img src={roads} alt="Related Lesson 3" />
+                    <p>Lucky Corner, Driver Wave</p>
+                    <button className="text-blue-500">View Lesson</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="related-lesson">
-            <img src={roads} alt="Related Lesson 2" />
-            <p>Check For Risky Cars!</p>
-            <button>View Lesson</button>
-          </div>
-          <div className="related-lesson">
-            <img src={roads} alt="Related Lesson 3" />
-            <p>Lucky Corner, Driver Wave</p>
-            <button>View Lesson</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+        )}
 
+        {/* VR Popup for connection status */}
+        {isVrPopupOpen && (
+          <VrPopup onClose={handlePopupClose} onShowVideo={handleShowVideo} />
+        )}
         
       
           {/* New Section */}

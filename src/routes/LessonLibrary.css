@@ -396,3 +396,17 @@
     background-color: #2980b9;
   }
   
+  .video-thumbnail {
+    position: relative;
+    width: 100%;
+  }
+  
+  .play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    pointer-events: none;
+  }
