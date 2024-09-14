@@ -9,6 +9,7 @@ import Research  from "./routes/Research";
 import Home from "./routes/Home";
 import LessonLibrary from "./routes/LessonLibrary";
 import Dashboard from "./components/Dashboard/Dashboard";
+import PECSNotebook from "./components/PECSNotebook";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path="/Uses" element={<Uses/>}  />
       <Route path="/lesson-library" element={<LessonLibrary/>} />
       <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/pecs" element={<PECSNotebook/>}/>
     </Routes>
 
     

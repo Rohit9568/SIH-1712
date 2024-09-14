@@ -3,14 +3,14 @@
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-    background-color:#4444f3; /* Blue background */
+    background-color:#16164d; /* Blue background */
   }
   
   /* Top section with VR image */
   .top-section {
     position: relative;
     height: 400px;
-    background-color: #4444f3;
+    background-color: #16164d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
   
   /* Bottom section with the card */
   .bottom-section {
-    background-color: #4444f3;
+    background-color: #16164d;
     padding: 40px;
     display: flex;
     justify-content: center;

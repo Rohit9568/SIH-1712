@@ -1,32 +1,22 @@
-import './Footer.css'; // Import the CSS file
+
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Footer Logo Section */}
-        <div className="footer-logo">
-          <img src="/path-to-logo" alt="Logo" className="footer-logo-image" />
-        </div>
-
-        {/* Footer Links Section */}
-        <div className="footer-links">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Social Media Icons Section */}
-        <div className="footer-social">
-          <a href="#" className="social-icon">FB</a>
-          <a href="#" className="social-icon">IG</a>
-          <a href="#" className="social-icon">TW</a>
-        </div>
-      </div>
-    </footer>
+    <>
+    <footer class="bg-gray-900 text-white py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <p class="text-sm">
+                        © 2024 Interactive Skills Enhancer. All rights reserved.
+                    </p>
+                    <div class="space-x-6">
+                        <a href="#" class="text-white hover:text-gray-400">Privacy Policy</a>
+                        <a href="#" class="text-white hover:text-gray-400">Terms of Service</a>
+                        <a href="#" class="text-white hover:text-gray-400">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </footer></>
   );
 };
 
