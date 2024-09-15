@@ -10,6 +10,11 @@ import Home from "./routes/Home";
 import LessonLibrary from "./routes/LessonLibrary";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PECSNotebook from "./components/PECSNotebook";
+import SentenceBuilder from "./components/AACSNotebook";
+import InteractiveLearningModule from "./components/InteractiveLearningModule";
+import StorySequencing from "./components/StorySequencing";
+import InteractiveStorybook from "./components/InteractiveStoryBook";
+import JigsawPuzzle from "./components/JigSawPuzzle";
 
 
 function App() {
@@ -29,6 +34,11 @@ function App() {
       <Route path="/lesson-library" element={<LessonLibrary/>} />
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/pecs" element={<PECSNotebook/>}/>
+      <Route path="/aacs" element={<SentenceBuilder/>}/>
+      <Route path="/interactive-learning-module" element={<InteractiveLearningModule/>}/>
+      <Route path="/story" element={<StorySequencing/>}/>
+      <Route path="/storybook" element={<InteractiveStorybook/>}/>
+      <Route path="/puzzle" element={<JigsawPuzzle/>}/>
     </Routes>
 
     
