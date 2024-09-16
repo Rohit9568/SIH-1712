@@ -34,14 +34,14 @@ function Navbar() {
 
           <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Solutions </a>
             <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Resources </a>
-            <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Pricing </a>
+            <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Library </a>
             <div className="relative group">
                 
               <button
                 onClick={toggleDropdown}
                 className="flex items-center text-base text-black transition-all duration-200 hover:text-opacity-80 focus:outline-none"
               >
-                Features
+                Activities
                 <svg className="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>

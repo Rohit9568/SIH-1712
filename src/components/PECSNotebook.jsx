@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar/Navbar';
 
 const sections = {
     food: [
@@ -74,7 +75,8 @@ const PECSNotebook = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-  return (
+  return (<>
+      <Navbar />
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">PECS Notebook</h1>
       
@@ -114,6 +116,7 @@ const PECSNotebook = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

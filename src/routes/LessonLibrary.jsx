@@ -153,17 +153,17 @@ const LessonLibrary = () => {
       
           {/* New Section */}
           <div className="whats-new-section">
-          <h3 className="see-whats-new">See What's New</h3>
+          <h3 className="see-whats-new">Start Your Virtual Journey</h3>
           <div className="new-lessons-container">
             <div className="lesson-card">
-              <div className="coming-soon-overlay">COMING SOON</div>
+              {/* <div className="coming-soon-overlay">COMING SOON</div> */}
               <img src= {roads}    onClick={openModal} alt="Lesson 1" className="lesson-card-image" />
               <h4>Neighborhood Crosswalk</h4>
               <p>All Language Levels</p>
            
             </div>
             <div className="lesson-card">
-              <div className="coming-soon-overlay">COMING SOON</div>
+              {/* <div className="coming-soon-overlay">COMING SOON</div> */}
               <img src= {pool} alt="Lesson 2" onClick={openModal}  className="lesson-card-image" />
               <h4>Pool Party Safety: The Basics</h4>
               <p>All Language Levels</p>

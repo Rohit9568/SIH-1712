@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar/Navbar';
 
 const initialWords = {
   start: [
@@ -69,8 +70,10 @@ const SentenceBuilder = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Sentence Builder</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">AACS Notebook</h1>
 
       {/* Sentence Display */}
       <div className="mb-6">
@@ -107,6 +110,7 @@ const SentenceBuilder = () => {
         Clear Sentence
       </button>
     </div>
+    </>
   );
 };
 
