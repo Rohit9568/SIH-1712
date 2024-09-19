@@ -15,6 +15,7 @@ import InteractiveLearningModule from "./components/InteractiveLearningModule";
 import StorySequencing from "./components/StorySequencing";
 import InteractiveStorybook from "./components/InteractiveStoryBook";
 import JigsawPuzzle from "./components/JigSawPuzzle";
+import VRVid from "./components/VRVid.jsx";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <Route path="/story" element={<StorySequencing/>}/>
       <Route path="/storybook" element={<InteractiveStorybook/>}/>
       <Route path="/puzzle" element={<JigsawPuzzle/>}/>
+      <Route path="/vr/:title" element={<VRVid/>}/>
     </Routes>
 
     

@@ -16,10 +16,10 @@ function Navbar() {
       <div className="px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex-shrink-0">
-            <a href="#" title="" className="flex">
+            <Link to="/">
               <img className="w-auto  h-60" src={Sahayak} alt="" />
            
-            </a>
+            </Link>
           </div>
 
           <button type="button" className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
@@ -35,8 +35,9 @@ function Navbar() {
             
 
           <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Solutions </a>
-            <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Resources </a>
-            <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80"> Library </a>
+            
+            <Link to="/dashboard" className="text-base text-black transition-all duration-200 hover:text-opacity-80">Dashboard</Link>
+            <Link to="/lesson-library" className="text-base text-black transition-all duration-200 hover:text-opacity-80">Lesson Library</Link>
             <div className="relative group">
                 
               <button

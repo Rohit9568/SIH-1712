@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import CalendarHeatmap from 'react-calendar-heatmap'
 import 'react-calendar-heatmap/dist/styles.css'
 import ReactApexChart from 'react-apexcharts'
+import Navbar from '../Navbar/Navbar'
 
 const Dashboard = () => {
   const data = [
@@ -114,6 +115,8 @@ const Dashboard = () => {
   ]
 
   return (
+    <>
+    <Navbar />
     <div className='flex flex-col md:flex-row p-6'>
       {/* Left Side: Student Details */}
       <div className='md:w-1/4 p-4'>
@@ -283,6 +286,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
