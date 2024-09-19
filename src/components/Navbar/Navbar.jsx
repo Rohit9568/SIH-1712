@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Navbar.css';
+import Sahayak from '../../assets/Sahayak.png'
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,7 +17,8 @@ function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex-shrink-0">
             <a href="#" title="" className="flex">
-              <img className="w-auto h-8" src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg" alt="" />
+              <img className="w-auto  h-60" src={Sahayak} alt="" />
+           
             </a>
           </div>
 
