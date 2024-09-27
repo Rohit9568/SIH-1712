@@ -13,28 +13,25 @@ const words = [
 
 const StorySequencing = () => {
   const [selectedWords, setSelectedWords] = useState([]);
-  const [showStory, setShowStory] = useState(false); // Toggle to show/hide story
-  const speechSynthesisRef = useRef(null); // Ref to track speech synthesis instance
+  const [showStory, setShowStory] = useState(false);
+  const speechSynthesisRef = useRef(null);
 
-  // Select a word and add it to the story
   const handleSelect = (word) => {
     setSelectedWords([...selectedWords, word]);
     const utterance = new SpeechSynthesisUtterance(word.text);
     window.speechSynthesis.speak(utterance);
   };
 
-  // Play sound when hovering over a word
   const handleHover = (word) => {
     const utterance = new SpeechSynthesisUtterance(word.text);
     speechSynthesisRef.current = utterance;
     window.speechSynthesis.speak(utterance);
   };
 
-  // Stop sound when hovering out of a word
   const handleHoverOut = () => {
     if (speechSynthesisRef.current) {
-      window.speechSynthesis.cancel(); // Stop ongoing speech
-      speechSynthesisRef.current = null; // Reset the ref
+      window.speechSynthesis.cancel();
+      speechSynthesisRef.current = null;
     }
   };
 
@@ -42,11 +39,12 @@ const StorySequencing = () => {
     <>
       <Navbar />
       <div className="min-h-screen bg-gradient-to-r from-purple-100 via-pink-100 to-blue-100 flex flex-col items-center p-6">
-        <h1 className="text-4xl font-bold text-white mb-6 shadow-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 rounded-lg">
+        {/* Title */}
+        <h1 className="text-4xl font-bold text-white mb-6 shadow-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 rounded-lg text-center">
           Story Sequencing
         </h1>
 
-        {/* Button to Show/Hide Story Section */}
+        {/* Toggle Story Section Button */}
         <button
           className="mb-8 px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-all transform hover:scale-105 focus:outline-none shadow-lg"
           onClick={() => setShowStory(!showStory)}
@@ -54,7 +52,7 @@ const StorySequencing = () => {
           {showStory ? 'Hide Story Sequencing' : 'Show Story Sequencing'}
         </button>
 
-        {/* Conditionally show the story sequencing section */}
+        {/* Story Words Section */}
         {showStory && (
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             {words.map((word) => (
@@ -62,15 +60,11 @@ const StorySequencing = () => {
                 key={word.id}
                 className="bg-white text-gray-900 p-4 rounded-lg cursor-pointer shadow-md hover:bg-blue-200 hover:shadow-xl transform transition-all duration-300 hover:scale-105"
                 onClick={() => handleSelect(word)}
-                onMouseEnter={() => handleHover(word)}  // Play sound on hover
-                onMouseLeave={handleHoverOut}            // Stop sound on hover out
-                whileHover={{ scale: 1.1, backgroundColor: "#c3dafe" }} // Animating on hover
-                transition={{ type: "spring", stiffness: 300 }}
-                style={{
-                  maxWidth: '150px',
-                  padding: '1rem',
-                  textAlign: 'center'
-                }}
+                onMouseEnter={() => handleHover(word)}
+                onMouseLeave={handleHoverOut}
+                whileHover={{ scale: 1.1, backgroundColor: '#c3dafe' }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                style={{ maxWidth: '150px', padding: '1rem', textAlign: 'center' }}
               >
                 <span className="text-3xl mb-2" role="img" aria-label={word.text}>
                   {word.emoji}
@@ -81,7 +75,7 @@ const StorySequencing = () => {
           </div>
         )}
 
-        {/* Selected Words Display */}
+        {/* Selected Story Section */}
         <div className="w-full max-w-4xl">
           <h2 className="text-3xl font-semibold text-gray-700 mb-4">Your Story</h2>
           <div className="space-y-4">

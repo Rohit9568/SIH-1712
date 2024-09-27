@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar';
+import { FaInfoCircle } from 'react-icons/fa';
 
 const sections = {
     food: [
@@ -69,6 +70,8 @@ const sections = {
 
 const PECSNotebook = () => {
     const [currentSection, setCurrentSection] = useState(null);
+    const [hoveredItem, setHoveredItem] = useState(null); 
+    const [showTooltip, setShowTooltip] = useState(false); 
 
     const handleIconClick = (speech) => {
         const utterance = new SpeechSynthesisUtterance(speech);
@@ -81,9 +84,26 @@ const PECSNotebook = () => {
         <>
             <Navbar />
             <div className="min-h-screen bg-gradient-to-r from-blue-200 to-purple-300 flex flex-col items-center p-6">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6">PECS Notebook</h1>
+                <div className="relative items-center mb-10 w-full flex justify-center">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-10 shadow-lg bg-gradient-to-r from-indigo-400 to-purple-400 text-white p-3 rounded-lg text-center">
+                        PECS Notebook
+                    </h1>
 
-                {/* Main Menu */}
+                    {/* Info icon with hover tooltip, positioned to the top-right */}
+                    <FaInfoCircle
+                        className="absolute right-0 top-1 text-white text-3xl cursor-pointer"
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                    />
+                    {showTooltip && (
+                        <div className="absolute right-0 top-10 mt-2 w-64 p-3 bg-white text-gray-900 rounded-lg shadow-lg text-sm">
+                            <strong>What is PECS?</strong><br />
+                            PECS (Picture Exchange Communication System) is a communication tool for individuals with speech or communication challenges. It helps by using pictures to communicate needs and desires.
+                        </div>
+                    )}
+                </div>
+
+                {/* Main Menu for sections */}
                 <div className="flex space-x-4 mb-6">
                     {Object.keys(sections).map((section, idx) => (
                         <button
@@ -96,9 +116,9 @@ const PECSNotebook = () => {
                     ))}
                 </div>
 
-                {/* Icons Section */}
+                {/* Display section content */}
                 {currentSection && (
-                    <div className="w-full max-w-4xl">
+                    <div className="w-full max-w-4xl relative">
                         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
                             {currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}
                         </h2>
@@ -106,8 +126,10 @@ const PECSNotebook = () => {
                             {sections[currentSection].map((item, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform cursor-pointer flex flex-col items-center"
+                                    className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform cursor-pointer flex flex-col items-center relative"
                                     onClick={() => handleIconClick(item.speech)}
+                                    onMouseEnter={() => setHoveredItem(item)}
+                                    onMouseLeave={() => setHoveredItem(null)}
                                 >
                                     <span className="text-4xl mb-2" role="img" aria-label={item.label}>
                                         {item.icon}

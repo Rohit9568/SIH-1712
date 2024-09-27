@@ -151,7 +151,7 @@ const LessonLibrary = () => {
                   <div className="badge">All Ages</div>
                   <div className="language">All Language Levels</div>
                   <div className="tags">
-                    tags: {currentLesson.tags.join(', ')}
+                    Tags: {currentLesson.tags.join(', ')}
                   </div>
                 </div>
                 <div className="lesson-description">

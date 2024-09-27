@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar';
+import { FaInfoCircle } from 'react-icons/fa';
 
 const initialWords = {
   start: [
@@ -39,6 +40,7 @@ const initialWords = {
 const SentenceBuilder = () => {
   const [sentence, setSentence] = useState([]);
   const [availableWords, setAvailableWords] = useState(initialWords.start);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleWordClick = (word) => {
     const updatedSentence = [...sentence, word];
@@ -72,22 +74,37 @@ const SentenceBuilder = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 flex flex-col items-center p-6">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6 shadow-lg bg-gradient-to-r from-indigo-400 to-purple-400 text-white p-3 rounded-lg">
-          AACS Notebook
-        </h1>
+      <div className="min-h-screen bg-gradient-to-br from-blue-200 to-purple-300  flex flex-col items-center p-6">
+        <div className="relative flex items-center justify-center w-full">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6 shadow-lg bg-gradient-to-r from-indigo-400 to-purple-400 text-white p-3 rounded-lg">
+            AACS Notebook
+          </h1>
+
+          {/* Info icon with hover tooltip */}
+          <FaInfoCircle
+            className="absolute right-0 text-white text-3xl cursor-pointer"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+          />
+          {showTooltip && (
+            <div className="absolute right-0 top-12 mt-2 w-64 p-3 bg-white text-gray-900 rounded-lg shadow-lg text-sm">
+              <strong>What is AACS?</strong><br />
+              AACS (Augmentative and Alternative Communication Systems) helps individuals with communication difficulties to express themselves using various tools and strategies.
+            </div>
+          )}
+        </div>
 
         {/* Sentence Display */}
         <div className="mb-6 w-full max-w-xl">
           <h2 className="text-2xl font-semibold text-gray-700 mb-2">Your Sentence:</h2>
-          <div 
+          <div
             className="text-xl font-medium text-gray-900 bg-white p-4 rounded-lg shadow-md transition-all transform hover:scale-105"
-            style={{ 
-              overflowWrap: 'break-word',  // Ensures long words wrap
-              wordWrap: 'break-word',      // Ensures words break properly
-              wordBreak: 'break-word',     // Controls how the words break within the container
-              maxHeight: '150px',          // Controls the height of the box (adjustable)
-              overflowY: 'auto'            // Adds scrollbar if content overflows
+            style={{
+              overflowWrap: 'break-word',
+              wordWrap: 'break-word',
+              wordBreak: 'break-word',
+              maxHeight: '150px',
+              overflowY: 'auto'
             }}
           >
             {sentence.join(' ')}
@@ -104,8 +121,8 @@ const SentenceBuilder = () => {
                 className="bg-white p-3 rounded-lg shadow-lg flex flex-col items-center cursor-pointer hover:bg-indigo-100 hover:shadow-2xl transform transition-all duration-300 hover:scale-110"
                 onClick={() => handleWordClick(item.word)}
                 style={{
-                  maxWidth: '120px', // Ensures the box size is fixed
-                  padding: '1rem',   // Adjust padding for readability
+                  maxWidth: '120px',
+                  padding: '1rem',
                   textAlign: 'center'
                 }}
               >

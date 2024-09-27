@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-
-Modal.setAppElement('#root'); // This is necessary for accessibility
+import { FaInfoCircle } from 'react-icons/fa';
+import Navbar from './Navbar/Navbar';
 
 const storyContent = [
   { type: 'text', content: 'Once', speech: 'Once', description: 'A starting word often used to introduce a story.' },
+  // (Other words in the story...)
   { type: 'text', content: 'upon', speech: 'upon', description: 'Indicates a moment in time.' },
   { type: 'text', content: 'a', speech: 'a', description: 'An article used to modify nouns.' },
   { type: 'text', content: 'time', speech: 'time', description: 'A continuous sequence of events.' },
@@ -85,6 +85,7 @@ const storyContent = [
 
 const InteractiveStorybook = () => {
     const [hoveredWord, setHoveredWord] = useState('');
+    const [showTooltip, setShowTooltip] = useState(false); // To toggle the tooltip for the info icon
 
     const speakWord = (text) => {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -101,34 +102,53 @@ const InteractiveStorybook = () => {
       setHoveredWord('');
     };
 
+    const handleInfoMouseEnter = () => {
+      setShowTooltip(true);
+    };
+
+    const handleInfoMouseLeave = () => {
+      setShowTooltip(false);
+    };
+
     return (
-      <div className="story-container" style={{ margin: '20px auto', width: '90%', maxWidth: '900px', padding: '20px', borderRadius: '10px', backgroundColor: '#f7f9fc' }}>
-        <h1 style={{ color: '#333', fontFamily: 'Arial, sans-serif' }}>Interactive Storybook</h1>
-        <div style={{ fontFamily: 'Arial, sans-serif' }}>
-          {storyContent.map((item, index) => (
-            <span
-              key={index}
-              className="word"
-              style={{
-                display: 'inline-block',
-                margin: '8px',
-                padding: '8px',
-                fontSize: '20px',
-                borderRadius: '5px',
-                transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
-                backgroundColor: hoveredWord === item.speech ? 'rgba(0, 123, 255, 0.3)' : 'transparent',
-                color: hoveredWord === item.speech ? '#0056b3' : '#333',
-                cursor: 'pointer',
-                transform: hoveredWord === item.speech ? 'scale(1.1)' : 'scale(1)',
-              }}
-              onMouseEnter={() => handleMouseEnter(item.speech)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {item.content}
-            </span>
-          ))}
+      <>
+        <Navbar />
+        <div className="max-w-3xl mx-auto my-8 p-6 rounded-lg bg-purple-200 shadow-md">
+          <div className="flex justify-center items-center mb-6">
+            <h1 className="text-3xl font-semibold text-gray-700 mr-4">Storytelling</h1>
+            <div className="relative">
+              <FaInfoCircle
+                size={24}
+                className="text-blue-500 cursor-pointer"
+                onMouseEnter={handleInfoMouseEnter}
+                onMouseLeave={handleInfoMouseLeave}
+              />
+              {showTooltip && (
+                <div className="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white border border-gray-300 rounded-lg p-4 shadow-lg">
+                  <p className="text-sm text-gray-600 flex" >
+                    Storybooks are a great tool for enhancing the social and communication skills of children with ASD.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="text-lg leading-relaxed">
+            {storyContent.map((item, index) => (
+              <span
+                key={index}
+                className={`inline-block m-2 p-2 rounded-md transition-transform duration-300 cursor-pointer ${
+                  hoveredWord === item.speech ? 'bg-blue-200 text-blue-700 scale-110' : 'text-gray-700'
+                }`}
+                onMouseEnter={() => handleMouseEnter(item.speech)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {item.content}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      </>
     );
 };
 

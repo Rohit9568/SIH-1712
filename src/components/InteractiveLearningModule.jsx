@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar';
+import { FaInfoCircle } from 'react-icons/fa';
 
 // Mock data for interactive content
 const interactiveContent = {
@@ -32,6 +33,7 @@ const interactiveContent = {
 const InteractiveLearningModule = () => {
   const [currentCategory, setCurrentCategory] = useState('numbers');
   const [completedItems, setCompletedItems] = useState({});
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleItemClick = (item) => {
     const utterance = new SpeechSynthesisUtterance(item.audio);
@@ -50,10 +52,25 @@ const InteractiveLearningModule = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-gray-100 via-indigo-100 to-purple-200 flex flex-col items-center p-6">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8 shadow-lg bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-3 rounded-lg">
-          Interactive Learning Module
-        </h1>
+      <div className="min-h-screen bg-gradient-to-br from-blue-200 to-purple-300  flex flex-col items-center p-6">
+        <div className="relative flex items-center justify-center w-full">
+          <h1 className="text-4xl font-bold text-gray-900 mb-8 shadow-lg bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-3 rounded-lg">
+            Interactive Learning Module
+          </h1>
+
+          {/* Info icon with hover tooltip */}
+          <FaInfoCircle
+            className="absolute right-0 text-white text-3xl cursor-pointer"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+          />
+          {showTooltip && (
+            <div className="absolute right-0 top-12 mt-2 w-64 p-3 bg-white text-gray-900 rounded-lg shadow-lg text-sm">
+              <strong>What is Interactive Learning?</strong><br />
+              Interactive Learning engages students actively with hands-on activities, improving their understanding and retention through participation.
+            </div>
+          )}
+        </div>
 
         {/* Category Selection */}
         <div className="flex space-x-4 mb-8">
