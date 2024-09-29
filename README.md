@@ -6,15 +6,19 @@
 
 <div align="center">
     <h1>Sahayak</h1>
-    <p>Challenge your limits</p>
+    <p>A Transformative Approach to Autism and ID Support</p>
 </div>
 
 
 <br />
 
-Welcome to Sahayak by Team Error404, An AI-driven learning platform designed to create personalized educational journeys tailored to each student's unique skills, career goals, and interests. It offers interactive multilingual content, including videos, quizzes, and downloadable resources, to enhance learning engagement. Additional features like live Q&A sessions and a notes maker promote active participation.,
-The platform also includes multiplayer VR labs for vocational training, allowing students to gain hands-on experience in a simulated environment. A multilingual AI chatbot offers instant support and personalized guidance.We offer a wide range of quizzes designed to challenge learners at every level. From multiple-choice questions to coding challenges, our quizzes are crafted to test your knowledge in a fun and engaging way. Sahayak provides instant feedback on user responses, aiding in learning and improvement. As such, Sahayak is perfect for both educational purposes and entertainment. Best of all, these features are available for free.
-Our team Error404 comprises of expert coders and educators work tirelessly to create and curate high-quality web and resources that are both challenging and informative.
+In India, an estimated 2.2 million children are living with Autism Spectrum Disorder (ASD) and Intellectual Disabilities (ID). Many of these children face significant challenges in communication, social interaction, and emotional regulation. They often struggle with tasks that may seem simple to others—making eye contact, expressing their emotions, or participating in everyday activities. The lack of structured support for these children leads to feelings of isolation and frustration, both for them and their families.
 
-<mark>Come Join us to Educate and Transform India in a Innovative way</mark>
+Our solution, Sahayk, is designed to address these very challenges by providing a comprehensive and immersive learning platform. Using advanced technologies like VR, AR, and AI-powered AAC tools, Sahayk offers a safe space for children to learn and practice essential life skills. From customizable AI avatars that simulate social interactions to real-time feedback for speech development, our platform empowers children to break communication barriers and build confidence. Through guided AR-based therapy sessions, emotional regulation exercises, and interactive games, Sahayk promotes holistic development.
+
+Every child deserves to be understood and supported. Every parent deserves to see their child thrive. Sahayk is not just a tool—it’s a helping hand, a guiding light, and a hope for families who want the best for their children. Join us in making a difference, and be a part of a journey that brings smiles, words, and a world of new possibilities to every child’s life.
+
+
+
+<mark>Come, join us. Let’s build a future where every child has a Sahayk—the one who helps.</mark>
 
