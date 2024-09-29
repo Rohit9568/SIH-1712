@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://cuizzy.s4shibam.com">
+    <a href="https://cuizzy.s4shibam.com/assets/Logo-270c8115.svg">
         <img alt="Cuizzy" width="100" src="./public/Logo.svg">
     </a>
 </p>
