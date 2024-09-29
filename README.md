@@ -1,7 +1,7 @@
 <p align="center">
    
         <img alt="Cuizzy" width="100" src="https://cuizzy.s4shibam.com/assets/Logo-270c8115.svg">
-    </a>
+    
 </p>
 
 <div align="center">
